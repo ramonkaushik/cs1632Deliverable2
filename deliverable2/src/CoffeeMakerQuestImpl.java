@@ -176,7 +176,7 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 			}
 			//at this point, we can know we can move to the next room 
 			roomCounter++;
-			return getCurrentRoom().getDescription();
+			return "";
 		}
 		//s: south command 
 		if(cmd.equals("s"))
@@ -187,7 +187,7 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 			}
 
 			roomCounter--;
-			return getCurrentRoom().getDescription();
+			return "";
 		}
 		//i: show inventory 
 		if(cmd.equals("i"))
