@@ -3,6 +3,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.*;
 import org.mockito.*;
+
+import jdk.internal.jline.internal.TestAccessible;
+
 import static org.mockito.Mockito.*;
 
 public class CoffeeMakerQuestTest {
@@ -71,6 +74,8 @@ public class CoffeeMakerQuestTest {
 	{
 
 	}
+	
+	
 	
 	/**
 	 * Test case for String getInstructionsString().
@@ -246,7 +251,7 @@ public class CoffeeMakerQuestTest {
 	@Test
 	public void testProcessCommandDLose() {
 		// TODO
-		assertEquals(cmq.processCommand("D"),"YOU HAVE NO COFFEE!\nYOU HAVE NO CREAM!\nYOU HAVE NO SUGAR!\n\nYou drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!\n");
+		assertEquals(cmq.processCommand("D"),"\nYou drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!\n");
 
 	}
 	
@@ -264,10 +269,15 @@ public class CoffeeMakerQuestTest {
 		when(player.checkCoffee()).thenReturn(true);
 		when(player.checkCream()).thenReturn(true);
 		when(player.checkSugar()).thenReturn(true);
-		assertEquals(cmq.processCommand("D"),"You have a cup of delicious coffee.\nYou have some fresh cream.\nYou have some tasty sugar.\n\nYou drink the beverage and are ready to study!\nYou win!\n");
+		assertEquals(cmq.processCommand("D"),"\nYou drink the beverage and are ready to study!\nYou win!\n");
 		assertEquals(cmq.isGameOver(),true);
 	}
 	
 	// TODO: Put in more unit tests of your own making to improve coverage!
+	@Test
+	public void testInstructionString(){
+		assertEquals(" INSTRUCTIONS (N,S,L,I,D,H) > " , getInstructionString());
+
+	}
 	
 }
