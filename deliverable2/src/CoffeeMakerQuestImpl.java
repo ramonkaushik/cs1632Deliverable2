@@ -197,9 +197,13 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 		//d: drink, win or lose
 		if(cmd.equals("d"))
 		{
+			String winningString = "You have a cup of delicious coffee.\nYou have some fresh cream.\nYou have some tasty sugar.\n\nYou drink the beverage and are ready to study!\nYou win!\n";
 			//gameStatus = true;
-			System.out.println(drinkMessage());
-			System.exit(0);
+			if(drinkMessage().equals(winningString))
+			{
+				gameStatus = true;
+				return drinkMessage();
+			}
 			return drinkMessage();
 		}
 		//h: help command
