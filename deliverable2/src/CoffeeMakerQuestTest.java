@@ -82,12 +82,12 @@ public class CoffeeMakerQuestTest {
 	 * Preconditions: None.
 	 * Execution steps: Call cmq.getInstructionsString().
 	 * Postconditions: Return value is " INSTRUCTIONS (N,S,L,I,D,H) > ".
-	 /*
-	@Test
+	 */
+	 @Test
 	public void testGetInstructionsString() 
 	{
 		// Done
-		cmq.getInstructionsString();
+		assertEquals(" INSTRUCTIONS (N,S,L,I,D,H) > " , cmq.getInstructionsString());
 	}
 	
 	/**
@@ -271,13 +271,6 @@ public class CoffeeMakerQuestTest {
 		when(player.checkSugar()).thenReturn(true);
 		assertEquals(cmq.processCommand("D"),"\nYou drink the beverage and are ready to study!\nYou win!\n");
 		assertEquals(cmq.isGameOver(),true);
-	}
-	
-	// TODO: Put in more unit tests of your own making to improve coverage!
-	@Test
-	public void testInstructionString(){
-		assertEquals(" INSTRUCTIONS (N,S,L,I,D,H) > " , cmq.getInstructionString());
-
 	}
 	
 }
