@@ -145,7 +145,7 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 	public String getInstructionsString() 
 	{
 		// Done
-		return " INSTRUCTIONS (N,S,L,I,D,H) >";
+		return " INSTRUCTIONS (N,S,L,I,D,H) >\n";
 	}
 	
 	/**
@@ -240,14 +240,14 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 	return "What?";
 }
 	public String drinkMessage(){
-		String winningStatement = "You have a cup of delicious coffee.\nYou have some fresh cream.\nYou have some tasty sugar.\n\nYou drink the beverage and are ready to study!\nYou win!\n";
-		String noSugar = "Without sugar, the coffee is too bitter. You cannot study.\nYou lose!\n";
+		String winningStatement = "\nYou drink the beverage and are ready to study!\nYou win!\n";
+		String noSugar = "\nWithout sugar, the coffee is too bitter. You cannot study.\nYou lose!\n";
 		String noCream = "\nWithout cream, you get an ulcer and cannot study.\nYou lose!\n";
 		String noCoffee = "\nYou drink the sweetened cream, but without caffeine you cannot study.\nYou lose!\n";
 		String justCoffee = "\nWithout cream, you get an ulcer and cannot study.\nYou lose!\n";
-		String justSugar = "\nYou eat the sugar, but without caffeine, you cannot study.\nYou lose!\n";
+		String justSugar = "\nYou eat the sugar, but without caffeine,  you cannot study.\nYou lose!\n";
 		String justCream = "\nYou drink the cream, but without caffeine, you cannot study.\nYou lose!\n";
-		String losingStatement = "YOU HAVE NO COFFEE!\nYOU HAVE NO CREAM!\nYOU HAVE NO SUGAR!\n\nYou drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!\n";
+		String losingStatement = "\nYou drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!\n";
 
 		if(player.checkCoffee() && player.checkCream() && player.checkSugar()) return winningStatement; 
 		else if(player.checkCoffee() && player.checkCream()) return noSugar;
