@@ -145,7 +145,7 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 	public String getInstructionsString() 
 	{
 		// Done
-		return "INSTRUCTIONS (N,S,L,I,D,H) >";
+		return " INSTRUCTIONS (N,S,L,I,D,H) >";
 	}
 	
 	/**
@@ -172,7 +172,7 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 		{
 			if(roomCounter == 6)
 			{
-				return "\nA door in that direction does not exist.\n";
+				return "A door in that direction does not exist.\n";
 			}
 			//at this point, we can know we can move to the next room 
 			roomCounter++;
@@ -183,7 +183,7 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 		{
 			if(roomCounter == 0) //cant go south
 			{
-				return "\nA door in that direction does not exist.\n";
+				return "A door in that direction does not exist.\n";
 			}
 
 			roomCounter--;
