@@ -276,7 +276,7 @@ public class CoffeeMakerQuestTest {
 	// TODO: Put in more unit tests of your own making to improve coverage!
 	@Test
 	public void testInstructionString(){
-		assertEquals(" INSTRUCTIONS (N,S,L,I,D,H) > " , getInstructionString());
+		assertEquals(" INSTRUCTIONS (N,S,L,I,D,H) > " , cmq.getInstructionString());
 
 	}
 	
