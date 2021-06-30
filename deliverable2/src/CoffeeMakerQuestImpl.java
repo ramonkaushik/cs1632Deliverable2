@@ -145,7 +145,7 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 	public String getInstructionsString() 
 	{
 		// Done
-		return " INSTRUCTIONS (N,S,L,I,D,H) >\n";
+		return " INSTRUCTIONS (N,S,L,I,D,H) > ";
 	}
 	
 	/**
