@@ -3,7 +3,7 @@ import java.util.*;
 public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 
 	// TODO: Add more member variables and methods as needed.
-	private boolean gameStatus; //true if won
+	private boolean gameStatus; //true if won or user loses game +-6
 	Player player;
 	private AbstractList<Room> rooms; //map of rooms 
 	private int roomCounter; //we'll use this as a live array counter - also the index of our arraylist of rooms
@@ -198,12 +198,14 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 		if(cmd.equals("d"))
 		{
 			String winningString = "You have a cup of delicious coffee.\nYou have some fresh cream.\nYou have some tasty sugar.\n\nYou drink the beverage and are ready to study!\nYou win!\n";
-			//gameStatus = true;
+			//gameStatus = true; which means you win
 			if(drinkMessage().equals(winningString))
 			{
 				gameStatus = true;
 				return drinkMessage();
 			}
+			//user actually lost the game wow
+			gameStatus = true;
 			return drinkMessage();
 		}
 		//h: help command
