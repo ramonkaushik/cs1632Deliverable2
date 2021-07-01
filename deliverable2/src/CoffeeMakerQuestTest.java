@@ -4,8 +4,6 @@ import org.junit.Test;
 import org.junit.*;
 import org.mockito.*;
 
-import jdk.internal.jline.internal.TestAccessible;
-
 import static org.mockito.Mockito.*;
 
 public class CoffeeMakerQuestTest {
