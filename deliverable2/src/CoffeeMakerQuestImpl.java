@@ -202,11 +202,11 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 			if(drinkMessage().equals(winningString))
 			{
 				gameStatus = true;
-				return drinkMessage();
+				return player.getInventoryString() + drinkMessage();
 			}
 			//user actually lost the game wow
 			gameStatus = true;
-			return drinkMessage();
+			return player.getInventoryString() + drinkMessage();
 		}
 		//h: help command
 		if(cmd.equals("h"))
