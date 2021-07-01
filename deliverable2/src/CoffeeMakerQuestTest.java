@@ -80,7 +80,7 @@ public class CoffeeMakerQuestTest {
 	 * Preconditions: None.
 	 * Execution steps: Call cmq.getInstructionsString().
 	 * Postconditions: Return value is " INSTRUCTIONS (N,S,L,I,D,H) > ".
-	 /*
+	 */
 	 @Test
 	public void testGetInstructionsString() 
 	{
@@ -250,7 +250,7 @@ public class CoffeeMakerQuestTest {
 	public void testProcessCommandDLose() {
 		// TODO
 		assertEquals(cmq.processCommand("D"),"\nYou drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!\n");
-
+		// String losingStatement = "\nYou drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!\n";
 	}
 	
 	/**
