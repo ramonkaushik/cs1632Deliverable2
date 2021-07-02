@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.junit.*;
 import org.mockito.*;
 
+import java.lang.reflect.Method;
+
 import static org.mockito.Mockito.*;
 
 public class CoffeeMakerQuestTest {
@@ -249,7 +251,7 @@ public class CoffeeMakerQuestTest {
 	@Test
 	public void testProcessCommandDLose() {
 		// TODO
-		assertEquals(cmq.processCommand("D"),"\nYou drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!\n");
+		assertEquals("\nYou drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!\n" , cmq.processCommand("D"));
 		// String losingStatement = "\nYou drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough. You cannot study.\nYou lose!\n";
 	}
 	
@@ -267,8 +269,31 @@ public class CoffeeMakerQuestTest {
 		when(player.checkCoffee()).thenReturn(true);
 		when(player.checkCream()).thenReturn(true);
 		when(player.checkSugar()).thenReturn(true);
-		assertEquals(cmq.processCommand("D"),"\nYou drink the beverage and are ready to study!\nYou win!\n");
+		assertEquals("\nYou drink the beverage and are ready to study!\nYou win!\n" , cmq.processCommand("D"));
 		assertEquals(cmq.isGameOver(),true);
+	}
+
+	@Test
+	public void testProcessCommandDCreamNoCoffeeNoSugar(){
+		when(player.checkCream()).thenReturn(true);
+		assertEquals(cmq.processCommand("D"), "\nYou drink the cream, but without caffeine, you cannot study.\nYou lose!\n");
+	}
+	@Test
+	public void testProccessCommandDCoffeeNoCreamNoSugar(){
+		when(player.checkCoffee()).thenReturn(true);
+		assertEquals(cmq.processCommand("D"),"\nWithout cream, you get an ulcer and cannot study.\nYou lose!\n");
+	}
+
+	@Test
+	public void testPrivateInstructionString(){
+		try {
+			Method m = CoffeeMakerQuestImpl.class.getMethod("formulateInstructionString()");
+			Object ret = m.invoke(new CoffeeMakerQuestImpl());
+			assertEquals((String)ret, " INSTRUCTIONS (N,S,L,I,D,H) > ");
+		}
+		catch (Exception e) {
+
+		}
 	}
 	
 }

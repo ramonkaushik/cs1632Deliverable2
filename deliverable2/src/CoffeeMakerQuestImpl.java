@@ -145,8 +145,13 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 	public String getInstructionsString() 
 	{
 		// Done
+		return formulateInstructionString();
+	}
+
+	private String formulateInstructionString() {
 		return " INSTRUCTIONS (N,S,L,I,D,H) > ";
 	}
+
 	
 	/**
 	 * Processes the user command given in String cmd and returns the response
